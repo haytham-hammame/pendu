@@ -26,4 +26,20 @@ def charger_images():
             exit()
     return images
 
-hh
+# Configuration de base
+WIDTH, HEIGHT = 1000, 800
+win = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Jeu du Pendu")
+
+# Couleurs
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+
+# Police d'écriture
+FONT = pygame.font.SysFont("comicsans", 40)
+
+# Charger les mots et les images
+mots = charger_mots("mots.txt")
+images = charger_images()
