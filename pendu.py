@@ -88,7 +88,8 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-
+ 
+ 
         if event.type == pygame.KEYDOWN:
             lettre = event.unicode.upper()
             if lettre.isalpha() and lettre not in lettres_utilisees:
