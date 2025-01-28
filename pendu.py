@@ -25,3 +25,5 @@ def charger_images():
             print(f"Erreur : L'image pendu{i}.png est introuvable.")
             exit()
     return images
+
+hh
