@@ -27,7 +27,7 @@ def charger_images():
     return images
 
 # Configuration de base
-WIDTH, HEIGHT = 1000, 800
+WIDTH, HEIGHT = 1000, 700
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Jeu du Pendu")
 
@@ -54,7 +54,7 @@ def redemarrer():
     lettres_trouvees = ["_" for _ in mot_a_trouver]
     tentatives_restantes = 6
     lettres_utilisees = set()
-    
+
 redemarrer()
 
 # Afficher un message
@@ -70,15 +70,15 @@ def draw_game():
     win.fill(WHITE)
     display_word = " ".join(lettres_trouvees)
     mot_text = FONT.render(display_word, True, BLACK)
-    win.blit(mot_text, (WIDTH // 2 - mot_text.get_width() // 2, 200))
+    win.blit(mot_text, (WIDTH // 2 - mot_text.get_width() // 2, 500))
 
     used_letters_text = FONT.render(" ".join(sorted(lettres_utilisees)), True, BLUE)
-    win.blit(used_letters_text, (WIDTH // 2 - used_letters_text.get_width() // 2, 300))
+    win.blit(used_letters_text, (WIDTH // 2 - used_letters_text.get_width() // 2, 400))
 
     win.blit(images[6 - tentatives_restantes], (150, 100))
     remaining_text = FONT.render(f"Tentatives restantes: {tentatives_restantes}", True, RED)
     win.blit(remaining_text, (10, 10))
-    pygame.display.update()    
+    pygame.display.update()
 
 # Boucle principale
 run = True
@@ -101,8 +101,8 @@ while run:
                     tentatives_restantes -= 1
             else:
                 print(f"Lettre '{lettre}' déjà utilisée.")
-    
-     if "_" not in lettres_trouvees:
+
+    if "_" not in lettres_trouvees:
         afficher_message("Félicitations, vous avez gagné !", BLUE)
         redemarrer()
 
